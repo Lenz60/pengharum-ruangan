@@ -16,7 +16,7 @@ client.on("error", console.error);
 client.on("ready", () => {
     const channel = client.channels.cache.get(ChannelID.GeneralID);
     console.log(`${client.user.username} ready!`);
-    // channel.send('Pengharum Ruangan Online🌼🌼');
+    channel.send('Pengharum Ruangan Online🌼🌼');
 });
 
 //Get Random Int 
@@ -96,9 +96,9 @@ client.on("messageCreate", async (message) => {
             return;
         }
 
-        const randomNumber =  Math.floor(Math.random() * 30);
+        const randomNumber =  Math.floor(Math.random() * 5);
         if(randomNumber == 5) {
-            message.reply('Bentar, refill dulu bentar... 😵');
+            message.reply(`udah ${randomNumber} nyemprot,\n refill dulu bentar... 😵`);
         } else {
             message.reply('Psssssttt... 🌼');
         }
@@ -135,36 +135,36 @@ function sleep (time) {
   }
 process.on('SIGHUP', function(){
     const channel = client.channels.cache.get(ChannelID.GeneralID);
-    // channel.send('Pengharum Ruangan Offline');
+    channel.send('Pengharum Ruangan Offline');
 })
 process.on('SIGINT', function () {
     const channel = client.channels.cache.get(ChannelID.GeneralID);
-    // channel.send('Pengharum Ruangan Offline');
+    channel.send('Pengharum Ruangan Offline');
   sleep(3000).then(() => {
     process.exit(0);
   });
 });
 process.on('SIGTERM', function(){
     const channel = client.channels.cache.get(ChannelID.GeneralID);
-    // channel.send('Pengharum Ruangan Offline');
+    channel.send('Pengharum Ruangan Offline');
 })
 process.on('SIGKILL', function(){
     const channel = client.channels.cache.get(ChannelID.GeneralID);
-    // channel.send('Pengharum Ruangan Offline');
+    channel.send('Pengharum Ruangan Offline');
 })
 process.on('SIGUSR1', async function(){
     const channel = client.channels.cache.get(ChannelID.GeneralID);
-    // channel.send('Pengharum Ruangan Offline');
+    channel.send('Pengharum Ruangan Offline');
 })
 process.on('SIGUSR2', async function(){
     const channel = client.channels.cache.get(ChannelID.GeneralID);
-    // channel.send('Pengharum Ruangan Offline');
+    channel.send('Pengharum Ruangan Offline');
 })
 process.on('exit', function(){
     const channel = client.channels.cache.get(ChannelID.GeneralID);
-    // channel.send('Pengharum Ruangan Offline');
+    channel.send('Pengharum Ruangan Offline');
 })
 process.on('uncaughtException', async function(){
     const channel = client.channels.cache.get(ChannelID.GeneralID);
-    // channel.send('Pengharum Ruangan Offline');
+    channel.send('Pengharum Ruangan Offline');
 })
