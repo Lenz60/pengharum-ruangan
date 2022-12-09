@@ -45,7 +45,7 @@ client.on("messageCreate", async (message) => {
     var regexListBau = [/repi/,/rapli/,/rapi/,/zahran/,/wajar/,
                             /hamano/,/mito/,/aldo/,/bread/,/anuraga/,
                                 /seno/,/aedeen/,/agatha/,/waterman/,/keg/,
-                                    /ayam/]
+                                    /ayam/,/dimas/]
     var list =regexListBau.map(function(item,index){
         var removed1 = item.toString().replace('/','').replace("[", "").replace("]", "");
         return removed1.toString().split("/").join("");                           
