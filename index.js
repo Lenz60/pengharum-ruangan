@@ -16,7 +16,7 @@ client.on("error", console.error);
 client.on("ready", () => {
     const channel = client.channels.cache.get(ChannelID.GeneralID);
     console.log(`${client.user.username} ready!`);
-    channel.send('Pengharum Ruangan Online🌼🌼');
+    // channel.send('Pengharum Ruangan Online🌼🌼');
 });
 
 //Get Random Int 
@@ -24,11 +24,32 @@ function getRandomInt(max) {
     return Math.floor(Math.random() * max);
   }
 
+  function matchInArray(string, expressions) {
+
+    var len = expressions.length,
+      i = 0;
+  
+    for (; i < len; i++) {
+      if (string.match(expressions[i])) {
+        return true;
+      }
+    }
+    return false;
+  };
+
+
 client.on("messageCreate", async (message) => {
     if (message.author.bot) return;
     const content = message.content;
     const bauRegex = /(^| |\"|\')bau( |$|\.|\,|!|\?|\:|\;|\"|\')/i
-    const list = ["Repi", "Zahran", "Wajar", "Rapi", "Rapli"]
+    var regexListBau = [/repi/,/rapli/,/rapi/,/zahran/,/wajar/,
+                            /hamano/,/mito/,/aldo/,/bread/,/anuraga/,
+                                /seno/,/aedeen/,/agatha/,/waterman/,
+                                    /ayam/]
+    var list =regexListBau.map(function(item,index){
+        var removed1 = item.toString().replace('/','').replace("[", "").replace("]", "");
+        return removed1.toString().split("/").join("");                           
+    });
 
     const d20 = /(^| |\"|\')rd20( |$|\.|\,|!|\?|\:|\;|\"|\')/i
         if(d20.test(content) || content.includes("796773828059201616")) { 
@@ -64,20 +85,14 @@ client.on("messageCreate", async (message) => {
         const listbauRegex = /(^| |\"|\')list orang bau( |$|\.|\,|!|\?|\:|\;|\"|\')/i
         if(listbauRegex.test(content) || content.includes("796773828059201616")) { 
             message.reply(`List Orang Bau : ${list}`)
+            // console.log(`${list}`);
             return;
         }
 
 
     if(bauRegex.test(content)) {
-        const arkaRegex = /(^| |\"|\')arka( |$|\.|\,|!|\?|\:|\;|\"|\')/i
-        if(arkaRegex.test(content) || content.includes("796773828059201616")) { // Easter egg for Arka Zelaphiel.
-            message.reply("Arka bau.\n\nPsssssttt... 🌼\nPsssssttt... 🌼\nPsssssttt... 🌼\nPsssssttt... 🌼\nPsssssttt... 🌼");
-            return;
-        }
-
-        const senRegex = /(^| |\"|\')(sen{1,}a?)( |$|\.|\,|!|\?|\:|\;|\"|\')/i
-        if(senRegex.test(content) || content.toLowerCase().includes("mentega") || content.includes("349956953252036622")) {
-            message.reply("Udah wangy, ga perlu pssst. ❤️");
+        if(matchInArray(content, regexListBau)) { // Easter egg for Arka Zelaphiel.
+            message.reply(`${content}.\n\nPsssssttt... 🌼\nPsssssttt... 🌼\nPsssssttt... 🌼\nPsssssttt... 🌼\nPsssssttt... 🌼`);
             return;
         }
 
@@ -120,36 +135,36 @@ function sleep (time) {
   }
 process.on('SIGHUP', function(){
     const channel = client.channels.cache.get(ChannelID.GeneralID);
-    channel.send('Pengharum Ruangan Offline');
+    // channel.send('Pengharum Ruangan Offline');
 })
 process.on('SIGINT', function () {
     const channel = client.channels.cache.get(ChannelID.GeneralID);
-    channel.send('Pengharum Ruangan Offline');
+    // channel.send('Pengharum Ruangan Offline');
   sleep(3000).then(() => {
     process.exit(0);
   });
 });
 process.on('SIGTERM', function(){
     const channel = client.channels.cache.get(ChannelID.GeneralID);
-    channel.send('Pengharum Ruangan Offline');
+    // channel.send('Pengharum Ruangan Offline');
 })
 process.on('SIGKILL', function(){
     const channel = client.channels.cache.get(ChannelID.GeneralID);
-    channel.send('Pengharum Ruangan Offline');
+    // channel.send('Pengharum Ruangan Offline');
 })
 process.on('SIGUSR1', async function(){
     const channel = client.channels.cache.get(ChannelID.GeneralID);
-    channel.send('Pengharum Ruangan Offline');
+    // channel.send('Pengharum Ruangan Offline');
 })
 process.on('SIGUSR2', async function(){
     const channel = client.channels.cache.get(ChannelID.GeneralID);
-    channel.send('Pengharum Ruangan Offline');
+    // channel.send('Pengharum Ruangan Offline');
 })
 process.on('exit', function(){
     const channel = client.channels.cache.get(ChannelID.GeneralID);
-    channel.send('Pengharum Ruangan Offline');
+    // channel.send('Pengharum Ruangan Offline');
 })
 process.on('uncaughtException', async function(){
     const channel = client.channels.cache.get(ChannelID.GeneralID);
-    channel.send('Pengharum Ruangan Offline');
+    // channel.send('Pengharum Ruangan Offline');
 })
