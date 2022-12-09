@@ -28,6 +28,7 @@ client.on("messageCreate", async (message) => {
     if (message.author.bot) return;
     const content = message.content;
     const bauRegex = /(^| |\"|\')bau( |$|\.|\,|!|\?|\:|\;|\"|\')/i
+    const list = ["Repi", "Zahran", "Wajar", "Rapi", "Rapli"]
 
     const d20 = /(^| |\"|\')rd20( |$|\.|\,|!|\?|\:|\;|\"|\')/i
         if(d20.test(content) || content.includes("796773828059201616")) { 
@@ -59,6 +60,13 @@ client.on("messageCreate", async (message) => {
             message.reply(`Roll 1d4 : ${getRandomInt(4)}`)
             return;
         }
+
+        const listbauRegex = /(^| |\"|\')list orang bau( |$|\.|\,|!|\?|\:|\;|\"|\')/i
+        if(listbauRegex.test(content) || content.includes("796773828059201616")) { 
+            message.reply(`List Orang Bau : ${list}`)
+            return;
+        }
+
 
     if(bauRegex.test(content)) {
         const arkaRegex = /(^| |\"|\')arka( |$|\.|\,|!|\?|\:|\;|\"|\')/i
