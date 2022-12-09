@@ -124,6 +124,7 @@ client.on("messageCreate", async (message) => {
 		Math.ceil(Math.random() * 5001) - 2500
 	));
 })();
+psstHourly();
 
 process.stdin.resume();
 //Close Message When the bot is turned off or killed the process
