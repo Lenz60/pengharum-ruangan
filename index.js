@@ -19,10 +19,46 @@ client.on("ready", () => {
     channel.send('Pengharum Ruangan Online🌼🌼');
 });
 
+//Get Random Int 
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+  }
+
 client.on("messageCreate", async (message) => {
     if (message.author.bot) return;
     const content = message.content;
     const bauRegex = /(^| |\"|\')bau( |$|\.|\,|!|\?|\:|\;|\"|\')/i
+
+    const d20 = /(^| |\"|\')rd20( |$|\.|\,|!|\?|\:|\;|\"|\')/i
+        if(d20.test(content) || content.includes("796773828059201616")) { 
+            message.reply(`Roll 1d20 : ${getRandomInt(20)}`)
+            return;
+        }
+    const d12 = /(^| |\"|\')rd12( |$|\.|\,|!|\?|\:|\;|\"|\')/i
+        if(d12.test(content) || content.includes("796773828059201616")) { 
+            message.reply(`Roll 1d12 : ${getRandomInt(12)}`)
+            return;
+        }
+    const d10 = /(^| |\"|\')rd10( |$|\.|\,|!|\?|\:|\;|\"|\')/i
+        if(d10.test(content) || content.includes("796773828059201616")) { 
+            message.reply(`Roll 1d10 : ${getRandomInt(10)}`)
+            return;
+        }
+    const d8 = /(^| |\"|\')rd8( |$|\.|\,|!|\?|\:|\;|\"|\')/i
+        if(d8.test(content) || content.includes("796773828059201616")) { 
+            message.reply(`Roll 1d8 : ${getRandomInt(8)}`)
+            return;
+        }
+    const d6 = /(^| |\"|\')rd6( |$|\.|\,|!|\?|\:|\;|\"|\')/i
+        if(d6.test(content) || content.includes("796773828059201616")) { 
+            message.reply(`Roll 1d6 : ${getRandomInt(6)}`)
+            return;
+        }
+    const d4 = /(^| |\"|\')rd4( |$|\.|\,|!|\?|\:|\;|\"|\')/i
+        if(d4.test(content) || content.includes("796773828059201616")) { 
+            message.reply(`Roll 1d4 : ${getRandomInt(4)}`)
+            return;
+        }
 
     if(bauRegex.test(content)) {
         const arkaRegex = /(^| |\"|\')arka( |$|\.|\,|!|\?|\:|\;|\"|\')/i
