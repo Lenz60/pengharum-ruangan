@@ -44,7 +44,7 @@ client.on("messageCreate", async (message) => {
     const bauRegex = /(^| |\"|\')bau( |$|\.|\,|!|\?|\:|\;|\"|\')/i
     var regexListBau = [/repi/,/rapli/,/rapi/,/zahran/,/wajar/,
                             /hamano/,/mito/,/aldo/,/bread/,/anuraga/,
-                                /seno/,/aedeen/,/agatha/,/waterman/,
+                                /seno/,/aedeen/,/agatha/,/waterman/,/keg/,
                                     /ayam/]
     var list =regexListBau.map(function(item,index){
         var removed1 = item.toString().replace('/','').replace("[", "").replace("]", "");
