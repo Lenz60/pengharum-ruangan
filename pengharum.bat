@@ -1,4 +1,8 @@
 @ECHO OFF
 R:
 cd "R:\pengharum-ruangan"
-start "Pengharum_Ruangan" node index.js
+dir
+start "" node idex.js
+pause
+
+

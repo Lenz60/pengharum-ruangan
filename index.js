@@ -110,8 +110,9 @@ function sprayHourly(){
     setTimeout(function(){
         const channel = client.channels.cache.get(ChannelID.GeneralID);
         channel.send('Channel bau \n Psssssttt... 🌼');
+        sprayHourly();
     },3600000);
-    sprayHourly();
+    
 }
 
 sprayHourly();
