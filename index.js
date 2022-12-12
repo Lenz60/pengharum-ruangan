@@ -111,6 +111,7 @@ function sprayHourly(){
         const channel = client.channels.cache.get(ChannelID.GeneralID);
         channel.send('Channel bau \n Psssssttt... 🌼');
     },3600000);
+    sprayHourly();
 }
 
 sprayHourly();
