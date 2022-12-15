@@ -11,6 +11,7 @@ Bot ini menggunakan NodeJS. Untuk build bot ini, lakukan hal di bawah ini:
 ```
 TOKEN=DISCORD_BOT_TOKEN_ANDA 
 ```
+5. Edit variable GeneralID pada ChannelID.js untuk menampilkan di status bot online atau offline
 4. Jalankan bot dengan `node index.js`.
 
 Untuk mendapatkan Discord Bot Token, silakan daftar di [Developer Portal](https://discord.com/developers/applications/).
